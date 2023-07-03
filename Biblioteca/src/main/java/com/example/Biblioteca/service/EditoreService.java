@@ -35,4 +35,8 @@ public class EditoreService {
     }
     public void deleteEditore(Long id) {
         editoreRepository.deleteById(id);
-    }}
+    }
+    public List<String> getStudenteNomeContatto(){
+        return editoreRepository.getStudenteNomeContatto();
+    }
+}
