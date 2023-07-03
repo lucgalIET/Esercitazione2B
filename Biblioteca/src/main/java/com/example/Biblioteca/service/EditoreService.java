@@ -18,7 +18,7 @@ public class EditoreService {
         return editoreRepository.save(editore);
     }
 
-    public List<EditoreEntity> getAllEditori() {
+    public List<EditoreEntity> getAllEditore() {
         return editoreRepository.findAll();
     }
 
