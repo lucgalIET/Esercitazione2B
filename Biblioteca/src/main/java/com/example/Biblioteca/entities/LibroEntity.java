@@ -41,7 +41,4 @@ public class LibroEntity {
             inverseJoinColumns = @JoinColumn(name = "id"))
     private List<AutoreEntity> autoreEntityList = new ArrayList<>();
 
-
-
-
 }
