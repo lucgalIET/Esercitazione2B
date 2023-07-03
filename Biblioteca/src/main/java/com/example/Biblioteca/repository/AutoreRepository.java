@@ -1,4 +1,7 @@
 package com.example.Biblioteca.repository;
 
-public interface AutoreRepository {
+import com.example.Biblioteca.entities.AutoreEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AutoreRepository  extends JpaRepository<AutoreEntity,Long> {
 }

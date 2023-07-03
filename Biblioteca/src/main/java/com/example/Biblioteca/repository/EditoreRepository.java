@@ -1,5 +1,8 @@
 package com.example.Biblioteca.repository;
 
-public interface EditoreRepository {
+import com.example.Biblioteca.entities.EditoreEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EditoreRepository  extends JpaRepository<EditoreEntity,Long> {
 
 }
