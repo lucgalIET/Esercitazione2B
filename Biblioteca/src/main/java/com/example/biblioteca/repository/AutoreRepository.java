@@ -1,6 +1,6 @@
-package com.example.Biblioteca.repository;
+package com.example.biblioteca.repository;
 
-import com.example.Biblioteca.entities.AutoreEntity;
+import com.example.biblioteca.entities.AutoreEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

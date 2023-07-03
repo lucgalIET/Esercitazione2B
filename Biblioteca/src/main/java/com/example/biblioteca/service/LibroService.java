@@ -1,7 +1,7 @@
-package com.example.Biblioteca.service;
+package com.example.biblioteca.service;
 
-import com.example.Biblioteca.entities.LibroEntity;
-import com.example.Biblioteca.repository.LibroRepository;
+import com.example.biblioteca.entities.LibroEntity;
+import com.example.biblioteca.repository.LibroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;

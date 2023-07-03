@@ -1,7 +1,7 @@
-package com.example.Biblioteca.service;
+package com.example.biblioteca.service;
 
-import com.example.Biblioteca.entities.AutoreEntity;
-import com.example.Biblioteca.repository.AutoreRepository;
+import com.example.biblioteca.entities.AutoreEntity;
+import com.example.biblioteca.repository.AutoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.example.Biblioteca.repository;
+package com.example.biblioteca.repository;
 
-import com.example.Biblioteca.entities.LibroEntity;
+import com.example.biblioteca.entities.LibroEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

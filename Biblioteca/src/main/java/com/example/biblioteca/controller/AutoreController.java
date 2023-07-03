@@ -1,7 +1,7 @@
-package com.example.Biblioteca.controller;
+package com.example.biblioteca.controller;
 
-import com.example.Biblioteca.entities.AutoreEntity;
-import com.example.Biblioteca.service.AutoreService;
+import com.example.biblioteca.entities.AutoreEntity;
+import com.example.biblioteca.service.AutoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
