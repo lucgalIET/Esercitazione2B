@@ -28,8 +28,10 @@ public class AutoreController {
     @PostMapping("/autore/modifica-autore/{id}")
     public AutoreEntity updateAutore(@RequestBody AutoreEntity autore) {return autoreService.saveAutore(autore);}
 
-    @PostMapping("/autore/delete-autore/{id}")
-    public void deleteAutore(@RequestBody Long id) { autoreService.deleteAutore(id);}
+    @DeleteMapping("/{id}")
+    public void deleteAutore(Long id){
+        autoreService.deleteAutore(id);
+    }
 
 
 }
