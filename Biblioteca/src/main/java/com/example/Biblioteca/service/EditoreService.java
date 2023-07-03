@@ -33,6 +33,6 @@ public class EditoreService {
 
         return editoreRepository.save(editore);
     }
-    public void deleteProdotto(Long id) {
+    public void deleteEditore(Long id) {
         editoreRepository.deleteById(id);
     }}
