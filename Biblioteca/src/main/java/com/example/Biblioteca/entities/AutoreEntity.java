@@ -1,6 +1,16 @@
 package com.example.Biblioteca.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 
 @Entity
 @Table(name = "autore")
@@ -16,45 +26,7 @@ public class AutoreEntity {
     @Column(name = "nazionalita")
     private String nazionalita;
 
-    public AutoreEntity() {
-    }
+    @ManyToMany( mappedBy = "autoreEntityList")
+    private List<LibroEntity> libroEntityList = new ArrayList<>();
 
-    public AutoreEntity(Long idAutore, String nomeAutore, String nazionalita) {
-        this.idAutore = idAutore;
-        this.nomeAutore = nomeAutore;
-        this.nazionalita = nazionalita;
-    }
-
-    public Long getIdAutore() {
-        return idAutore;
-    }
-
-    public void setIdAutore(Long idAutore) {
-        this.idAutore = idAutore;
-    }
-
-    public String getNomeAutore() {
-        return nomeAutore;
-    }
-
-    public void setNomeAutore(String nomeAutore) {
-        this.nomeAutore = nomeAutore;
-    }
-
-    public String getNazionalita() {
-        return nazionalita;
-    }
-
-    public void setNazionalita(String nazionalita) {
-        this.nazionalita = nazionalita;
-    }
-
-    @Override
-    public String toString() {
-        return "AutoreEntity{" +
-                "idAutore=" + idAutore +
-                ", nomeAutore='" + nomeAutore + '\'' +
-                ", nazionalita='" + nazionalita + '\'' +
-                '}';
-    }
 }
