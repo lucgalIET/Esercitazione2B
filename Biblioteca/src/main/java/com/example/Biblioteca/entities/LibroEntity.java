@@ -37,7 +37,7 @@ public class LibroEntity {
     @ManyToMany
     @JoinTable(
             name = "autore",
-            joinColumns = @JoinColumn(name = "id"),
+//            joinColumns = @JoinColumn(name = "id"),
             inverseJoinColumns = @JoinColumn(name = "id"))
     private List<AutoreEntity> autoreEntityList = new ArrayList<>();
 
