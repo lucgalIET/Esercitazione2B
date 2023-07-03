@@ -13,22 +13,22 @@ import java.util.Optional;
 public class AutoreController {
     @Autowired
     private AutoreService autoreService;
-    @GetMapping("/autore/get-all")
+    @GetMapping("/get/all")
     public List<AutoreEntity> getAllAutore(){
         return autoreService.getAllAutore();
     }
-    @GetMapping("/get-autore/{id}")
+    @GetMapping("/get/{id}")
     public Optional<AutoreEntity> getAutoreById(@PathVariable Long id){
         return autoreService.getAutoreById(id);
     }
 
-    @PostMapping("/salva-autore")
+    @PostMapping("/save")
     public AutoreEntity saveAutore(@RequestBody AutoreEntity autore) {return autoreService.saveAutore(autore);}
 
-    @PostMapping("/autore/modifica-autore/{id}")
+    @PostMapping("/modifica/{id}")
     public AutoreEntity updateAutore(@RequestBody AutoreEntity autore) {return autoreService.saveAutore(autore);}
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteAutore(Long id){
         autoreService.deleteAutore(id);
     }
