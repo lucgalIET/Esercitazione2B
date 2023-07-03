@@ -1,5 +1,7 @@
 package com.example.Biblioteca.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -36,9 +38,10 @@ public class LibroEntity {
 
     @ManyToMany
     @JoinTable(
-            name = "autore",
-//            joinColumns = @JoinColumn(name = "id"),
-            inverseJoinColumns = @JoinColumn(name = "id"))
+            name = "autore_libro",
+            joinColumns = @JoinColumn(name = "libro_id"),
+            inverseJoinColumns = @JoinColumn(name = "autore_id"))
+    @JsonBackReference
     private List<AutoreEntity> autoreEntityList = new ArrayList<>();
 
 }
