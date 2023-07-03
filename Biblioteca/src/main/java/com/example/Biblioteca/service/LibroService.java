@@ -14,13 +14,32 @@ public class LibroService {
     @Autowired
     private LibroRepository libroRepository;
 
-    public List<LibroEntity> getAllLibro(){return libroRepository.findAll();}
+    public List<LibroEntity> getAllLibro() {
+        return libroRepository.findAll();
+    }
 
-    public Optional<LibroEntity> getLibroById(@PathVariable Long id){return libroRepository.findById(id);}
+    public Optional<LibroEntity> getLibroById(@PathVariable Long id) {
+        return libroRepository.findById(id);
+    }
 
-    public void deleteLibroById(@PathVariable Long id){libroRepository.deleteById(id);}
+    public void deleteLibroById(@PathVariable Long id) {
+        libroRepository.deleteById(id);
+    }
+
+    public LibroEntity updateLibro(LibroEntity libro) {
+    Optional<LibroEntity>libroEntity = getLibroById(libro.getIdLibro());
+    if (libroEntity.isEmpty()) throw new NullPointerException();
+
+    return libroRepository.save(libro);
+    }
+    public LibroEntity saveLibro(LibroEntity libro){
+        return libroRepository.save(libro);
+    }
 
 }
+
+
+
 
 
 
