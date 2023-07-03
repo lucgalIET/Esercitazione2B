@@ -1,8 +1,8 @@
-package com.example.Biblioteca.controller;
+package com.example.biblioteca.controller;
 
 
-import com.example.Biblioteca.entities.EditoreEntity;
-import com.example.Biblioteca.service.EditoreService;
+import com.example.biblioteca.entities.EditoreEntity;
+import com.example.biblioteca.service.EditoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
