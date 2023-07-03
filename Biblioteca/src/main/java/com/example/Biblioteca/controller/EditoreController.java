@@ -34,7 +34,7 @@ public class EditoreController {
         editoreService.deleteEditore(id);
     }
 
-    @GetMapping("/studente-nome-contatto")
+    @GetMapping("/editore-nome-contatto")
     public List<String> getStudentiNomeContatto(){
         return editoreService.getStudenteNomeContatto();
     }
