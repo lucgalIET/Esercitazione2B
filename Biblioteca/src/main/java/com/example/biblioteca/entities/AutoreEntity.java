@@ -29,7 +29,7 @@ public class AutoreEntity {
     private String nazionalita;
 
     @ManyToMany( mappedBy = "autoreEntityList")
-    @JsonManagedReference
+    @JsonBackReference
     private List<LibroEntity> libroEntityList = new ArrayList<>();
 
 }
