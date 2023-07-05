@@ -13,7 +13,7 @@ import java.util.Optional;
 public class AutoreController {
     @Autowired
     private AutoreService autoreService;
-    @GetMapping("/get-all")
+    @GetMapping("/get/all")
     public List<AutoreEntity> getAllAutore(){
         return autoreService.getAllAutore();
     }

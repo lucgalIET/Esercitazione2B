@@ -14,7 +14,7 @@ public class LibroController {
     @Autowired
     private LibroService libroService;
 
-    @GetMapping("/all")
+    @GetMapping("/get/all")
     public List<LibroEntity> getAllLibro(){return libroService.getAllLibro();}
 
     @GetMapping("/get/{id}")
@@ -27,7 +27,7 @@ public class LibroController {
     @PostMapping("/save")
     public LibroEntity saveLibro(@RequestBody LibroEntity libro) {return libroService.saveLibro(libro);}
 
-    @PostMapping("/modifica/{id}")
+    @PostMapping("/edit/{id}")
     public LibroEntity updateLibro(@RequestBody LibroEntity libro) {return libroService.saveLibro(libro);}
 
 }

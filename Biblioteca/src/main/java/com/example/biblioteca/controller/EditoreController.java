@@ -14,19 +14,19 @@ import java.util.Optional;
 public class EditoreController {
     @Autowired
     private EditoreService editoreService;
-    @GetMapping("/get-all")
+    @GetMapping("/get/all")
     public List<EditoreEntity> getAllEditore(){
         return editoreService.getAllEditore();
     }
-    @GetMapping("/get-editore/{id}")
+    @GetMapping("/get/{id}")
     public Optional<EditoreEntity> getEditoreById(@PathVariable Long id){
         return editoreService.getEditoreById(id);
     }
 
-    @PostMapping("/salva-editore")
+    @PostMapping("/save")
     public EditoreEntity saveEditore(@RequestBody EditoreEntity editore) {return editoreService.saveEditore(editore);}
 
-    @PostMapping("/modifica-editore/{id}")
+    @PostMapping("/edit/{id}")
     public EditoreEntity updateEditore(@RequestBody EditoreEntity editore) {return editoreService.saveEditore(editore);}
 
     @DeleteMapping("/delete/{id}")
