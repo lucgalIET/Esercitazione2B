@@ -15,35 +15,45 @@ import java.util.Optional;
 public class EditoreController {
     @Autowired
     private EditoreService editoreService;
+
     @GetMapping("/get/all")
-    public List<EditoreEntity> getAllEditore(){
+    public List<EditoreEntity> getAllEditore() {
         return editoreService.getAllEditore();
     }
+
     @GetMapping("/get/{id}")
-    public Optional<EditoreEntity> getEditoreById(@PathVariable Long id){
+    public Optional<EditoreEntity> getEditoreById(@PathVariable Long id) {
         return editoreService.getEditoreById(id);
     }
 
     @PostMapping("/save")
-    public EditoreEntity saveEditore(@RequestBody EditoreEntity editore) {return editoreService.saveEditore(editore);}
+    public EditoreEntity saveEditore(@RequestBody EditoreEntity editore) {
+        return editoreService.saveEditore(editore);
+    }
 
     @PostMapping("/edit/{id}")
-    public EditoreEntity updateEditore(@RequestBody EditoreEntity editore) {return editoreService.saveEditore(editore);}
+    public EditoreEntity updateEditore(@RequestBody EditoreEntity editore) {
+        return editoreService.saveEditore(editore);
+    }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteEditore(Long id){
+    public void deleteEditore(Long id) {
         editoreService.deleteEditore(id);
     }
 
     @GetMapping("/editore-nome-contatto")
-    public List<String> getStudenteNomeContatto(){
+    public List<String> getStudenteNomeContatto() {
         return editoreService.getStudenteNomeContatto();
     }
 
     @GetMapping("/IdPari")
-    List<String> editoriConIdPari(){return editoreService.editoriConIdPari();}
+    List<String> editoriConIdPari() {
+        return editoreService.editoriConIdPari();
+    }
 
     @GetMapping("/info")
-    List<EditoreDTO> getEditoreInfo(){return editoreService.getEditoreInfo();}
+    List<EditoreDTO> getEditoreInfo() {
+        return editoreService.getEditoreInfo();
+    }
 
 }

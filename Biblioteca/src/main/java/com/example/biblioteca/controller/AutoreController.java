@@ -14,26 +14,34 @@ import java.util.Optional;
 public class AutoreController {
     @Autowired
     private AutoreService autoreService;
+
     @GetMapping("/get/all")
-    public List<AutoreEntity> getAllAutore(){
+    public List<AutoreEntity> getAllAutore() {
         return autoreService.getAllAutore();
     }
+
     @GetMapping("/get/{id}")
-    public Optional<AutoreEntity> getAutoreById(@PathVariable Long id){
+    public Optional<AutoreEntity> getAutoreById(@PathVariable Long id) {
         return autoreService.getAutoreById(id);
     }
 
     @PostMapping("/save")
-    public AutoreEntity saveAutore(@RequestBody AutoreEntity autore) {return autoreService.saveAutore(autore);}
+    public AutoreEntity saveAutore(@RequestBody AutoreEntity autore) {
+        return autoreService.saveAutore(autore);
+    }
 
     @PostMapping("/modifica/{id}")
-    public AutoreEntity updateAutore(@RequestBody AutoreEntity autore) {return autoreService.saveAutore(autore);}
+    public AutoreEntity updateAutore(@RequestBody AutoreEntity autore) {
+        return autoreService.saveAutore(autore);
+    }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteAutore(Long id){
+    public void deleteAutore(Long id) {
         autoreService.deleteAutore(id);
     }
 
-@GetMapping("/info")
-   public List<AutoreDTO> getAutoreInfo(){return autoreService.getAutoreInfo();}
+    @GetMapping("/info")
+    public List<AutoreDTO> getAutoreInfo() {
+        return autoreService.getAutoreInfo();
+    }
 }

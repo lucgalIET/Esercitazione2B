@@ -34,18 +34,22 @@ public class EditoreService {
 
         return editoreRepository.save(editore);
     }
+
     public void deleteEditore(Long id) {
         editoreRepository.deleteById(id);
     }
-    public List<String> getStudenteNomeContatto(){
+
+    public List<String> getStudenteNomeContatto() {
         return editoreRepository.getStudenteNomeContatto();
     }
 
-    public List<String> editoriConIdPari() {return editoreRepository.editoriConIdPari();}
+    public List<String> editoriConIdPari() {
+        return editoreRepository.editoriConIdPari();
+    }
 
-    public List<EditoreDTO> getEditoreInfo(){return editoreRepository.getEditoreInfo(); }
-
-
+    public List<EditoreDTO> getEditoreInfo() {
+        return editoreRepository.getEditoreInfo();
+    }
 
 
 }

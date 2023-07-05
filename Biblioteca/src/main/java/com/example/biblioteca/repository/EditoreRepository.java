@@ -19,7 +19,7 @@ public interface EditoreRepository  extends JpaRepository<EditoreEntity,Long> {
             "WHERE  id%2=0", nativeQuery = true)
     List<String> editoriConIdPari();
 
-    @Query(value = " SELECT * FROM editore",nativeQuery = true)
+    @Query(value = " SELECT * FROM editore", nativeQuery = true)
     List<EditoreDTO> getEditoreInfo();
 
 

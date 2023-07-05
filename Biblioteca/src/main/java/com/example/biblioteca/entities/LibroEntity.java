@@ -1,6 +1,5 @@
 package com.example.biblioteca.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -15,12 +14,12 @@ import java.util.List;
 @ToString
 
 @Entity
-@Table(name ="libro")
+@Table(name = "libro")
 public class LibroEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id",nullable = false)
+    @Column(name = "id", nullable = false)
     private Long idLibro;
 
     @Column(name = "titolo")
@@ -43,5 +42,5 @@ public class LibroEntity {
             inverseJoinColumns = @JoinColumn(name = "autore_id"))
     @JsonManagedReference
     private List<AutoreEntity> autoreEntityList = new ArrayList<>();
- //implementare un metodo che all'inserimento di un autore e di un libro aggiorni la tabella di relazione autore-libro
+    //implementare un metodo che all'inserimento di un autore e di un libro aggiorni la tabella di relazione autore-libro
 }

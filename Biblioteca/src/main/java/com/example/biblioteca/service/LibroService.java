@@ -28,16 +28,19 @@ public class LibroService {
     }
 
     public LibroEntity updateLibro(LibroEntity libro) {
-    Optional<LibroEntity>libroEntity = getLibroById(libro.getIdLibro());
-    if (libroEntity.isEmpty()) throw new NullPointerException();
+        Optional<LibroEntity> libroEntity = getLibroById(libro.getIdLibro());
+        if (libroEntity.isEmpty()) throw new NullPointerException();
 
-    return libroRepository.save(libro);
-    }
-    public LibroEntity saveLibro(LibroEntity libro){
         return libroRepository.save(libro);
     }
 
-    public List<LibroEntity>libriConPiuDi400Pagine(){return libroRepository.libriConPiuDi400Pagine();}
+    public LibroEntity saveLibro(LibroEntity libro) {
+        return libroRepository.save(libro);
+    }
+
+    public List<LibroEntity> libriConPiuDi400Pagine() {
+        return libroRepository.libriConPiuDi400Pagine();
+    }
 
     public List<LibroDTO> getLibroInfo() {
         return libroRepository.getLibroInfo();
