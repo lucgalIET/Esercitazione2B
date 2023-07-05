@@ -1,8 +1,6 @@
 package com.example.biblioteca.mapper;
 
-import com.example.biblioteca.dto.AutoreDTO;
 import com.example.biblioteca.dto.EditoreDTO;
-import com.example.biblioteca.entities.AutoreEntity;
 import com.example.biblioteca.entities.EditoreEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -21,7 +19,6 @@ public interface EditoreMapper {
     @Mapping(source = "nomeEditore", target = "nomeEditore")
     @Mapping(source = "nazionalitaAutore", target = "nazionalitaAutore")
     EditoreEntity dtoToEntity(EditoreDTO editoreDTO);
-
 
 
 }
