@@ -35,7 +35,7 @@ public class EditoreController {
     }
 
     @GetMapping("/editore-nome-contatto")
-    public List<String> getStudentiNomeContatto(){
+    public List<String> getStudenteNomeContatto(){
         return editoreService.getStudenteNomeContatto();
     }
 }
