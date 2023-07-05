@@ -43,5 +43,6 @@ public class LibroEntity {
             inverseJoinColumns = @JoinColumn(name = "autore_id"))
     @JsonManagedReference
     private List<AutoreEntity> autoreEntityList = new ArrayList<>();
- //implementare un metodo che all'inserimento di un autore e di un libro aggiorni la tabella di relazione autore-libro
+
+
 }

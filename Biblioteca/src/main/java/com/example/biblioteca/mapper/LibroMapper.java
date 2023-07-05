@@ -11,13 +11,13 @@ public interface LibroMapper {
     @Mapping(source = "titolo",target="titolo")
     @Mapping(source = "pagine",target="pagine")
     @Mapping(source = "prezzo",target="prezzo")
-    LibroDTO entityToDto (LibroEntity libroEntity);
+    LibroDTO entityToDto(LibroEntity libroEntity);
 
     @Mapping(source = "idLibro",target="idLibro")
     @Mapping(source = "titolo",target="titolo")
     @Mapping(source = "pagine",target="pagine")
     @Mapping(source = "prezzo",target="prezzo")
-    LibroEntity dtoToEntity (LibroDTO libroDTO);
+    LibroEntity dtoToEntity(LibroDTO libroDTO);
 
 
 }
