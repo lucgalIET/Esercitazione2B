@@ -1,7 +1,6 @@
 package com.example.biblioteca.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -28,7 +27,7 @@ public class AutoreEntity {
     @Column(name = "nazionalita")
     private String nazionalitaAutore;
 
-    @ManyToMany( mappedBy = "autoreEntityList")
+    @ManyToMany(mappedBy = "autoreEntityList")
     @JsonBackReference
     private List<LibroEntity> libroEntityList = new ArrayList<>();
 

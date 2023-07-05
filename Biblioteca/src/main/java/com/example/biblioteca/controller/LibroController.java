@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+
 @RestController
 @RequestMapping("/api/libro")
 public class LibroController {
@@ -16,28 +17,41 @@ public class LibroController {
     private LibroService libroService;
 
     @GetMapping("/get/all")
-    public List<LibroEntity> getAllLibro(){return libroService.getAllLibro();}
+    public List<LibroEntity> getAllLibro() {
+        return libroService.getAllLibro();
+    }
 
     @GetMapping("/get/{id}")
-    public Optional<LibroEntity>getlibroById(@PathVariable Long id){return libroService.getLibroById(id);}
+    public Optional<LibroEntity> getlibroById(@PathVariable Long id) {
+        return libroService.getLibroById(id);
+    }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteLibroById(@PathVariable Long id){libroService.deleteLibroById(id);}
+    public void deleteLibroById(@PathVariable Long id) {
+        libroService.deleteLibroById(id);
+    }
 
 
     @PostMapping("/save")
-    public LibroEntity saveLibro(@RequestBody LibroEntity libro) {return libroService.saveLibro(libro);}
+    public LibroEntity saveLibro(@RequestBody LibroEntity libro) {
+        return libroService.saveLibro(libro);
+    }
 
     @PostMapping("/edit/{id}")
-    public LibroEntity updateLibro(@RequestBody LibroEntity libro) {return libroService.saveLibro(libro);}
+    public LibroEntity updateLibro(@RequestBody LibroEntity libro) {
+        return libroService.saveLibro(libro);
+    }
 
     @GetMapping("/libriConPiuDi400Pagine")
-    public List<LibroEntity> libriConPiuDi400Pagine(){return libroService.libriConPiuDi400Pagine();}
-
+    public List<LibroEntity> libriConPiuDi400Pagine() {
+        return libroService.libriConPiuDi400Pagine();
+    }
 
 
     @GetMapping("/get-libro-info")
-    public List<LibroDTO> getLibroInfo(){return libroService.getLibroInfo();}
+    public List<LibroDTO> getLibroInfo() {
+        return libroService.getLibroInfo();
+    }
 
 }
 

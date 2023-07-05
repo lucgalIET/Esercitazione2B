@@ -1,5 +1,6 @@
 package com.example.biblioteca.service;
 
+import com.example.biblioteca.dto.EditoreDTO;
 import com.example.biblioteca.entities.EditoreEntity;
 import com.example.biblioteca.repository.EditoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +34,22 @@ public class EditoreService {
 
         return editoreRepository.save(editore);
     }
+
     public void deleteEditore(Long id) {
         editoreRepository.deleteById(id);
     }
-    public List<String> getStudenteNomeContatto(){
+
+    public List<String> getStudenteNomeContatto() {
         return editoreRepository.getStudenteNomeContatto();
     }
+
+    public List<String> editoriConIdPari() {
+        return editoreRepository.editoriConIdPari();
+    }
+
+    public List<EditoreDTO> getEditoreInfo() {
+        return editoreRepository.getEditoreInfo();
+    }
+
+
 }

@@ -1,5 +1,6 @@
 package com.example.biblioteca.service;
 
+import com.example.biblioteca.dto.AutoreDTO;
 import com.example.biblioteca.entities.AutoreEntity;
 import com.example.biblioteca.repository.AutoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,16 @@ public class AutoreService {
 
         return autoreRepository.save(autore);
     }
+
     public void deleteAutore(Long id) {
         autoreRepository.deleteById(id);
-    }}
+    }
+
+    public List<AutoreDTO> getAutoreInfo(){return autoreRepository.getAutoreInfo();}
+
+
+
+
+}
+
+
