@@ -1,5 +1,6 @@
 package com.example.biblioteca.controller;
 
+import com.example.biblioteca.dto.AutoreDTO;
 import com.example.biblioteca.entities.AutoreEntity;
 import com.example.biblioteca.service.AutoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,6 @@ public class AutoreController {
         autoreService.deleteAutore(id);
     }
 
-
+@GetMapping("/info")
+   public List<AutoreDTO> getAutoreInfo(){return autoreService.getAutoreInfo();}
 }

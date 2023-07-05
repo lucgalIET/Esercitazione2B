@@ -1,5 +1,6 @@
 package com.example.biblioteca.service;
 
+import com.example.biblioteca.dto.EditoreDTO;
 import com.example.biblioteca.entities.EditoreEntity;
 import com.example.biblioteca.repository.EditoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,4 +40,12 @@ public class EditoreService {
     public List<String> getStudenteNomeContatto(){
         return editoreRepository.getStudenteNomeContatto();
     }
+
+    public List<String> editoriConIdPari() {return editoreRepository.editoriConIdPari();}
+
+    public List<EditoreDTO> getEditoreInfo(){return editoreRepository.getEditoreInfo(); }
+
+
+
+
 }
