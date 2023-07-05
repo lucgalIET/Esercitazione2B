@@ -12,6 +12,6 @@ import java.util.List;
 public interface AutoreRepository extends JpaRepository<AutoreEntity, Long> {
 
     @Query(value = " SELECT * FROM autore", nativeQuery = true)
-    List<AutoreDTO> getAutoreInfo();
+    List<AutoreEntity> getAutoreInfo();
 
 }

@@ -2,6 +2,7 @@ package com.example.biblioteca.service;
 
 import com.example.biblioteca.dto.EditoreDTO;
 import com.example.biblioteca.entities.EditoreEntity;
+import com.example.biblioteca.entities.LibroEntity;
 import com.example.biblioteca.repository.EditoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,7 +49,14 @@ public class EditoreService {
     }
 
     public List<EditoreDTO> getEditoreInfo() {
-        return editoreRepository.getEditoreInfo();
+
+       List<EditoreEntity>editoreEntityList = editoreRepository.getEditoreInfo();
+       List<EditoreDTO> editoreDTOList;
+       for(int i = 0; i<editoreEntityList.size();i++){
+           editoreDTOList.add(editoreMapper.EDITORE_
+           )
+       }
+
     }
 
 

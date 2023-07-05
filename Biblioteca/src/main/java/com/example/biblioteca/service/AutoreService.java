@@ -39,7 +39,7 @@ public class AutoreService {
         autoreRepository.deleteById(id);
     }
 
-    public List<AutoreDTO> getAutoreInfo(){return autoreRepository.getAutoreInfo();}
+    public List<AutoreEntity> getAutoreInfo(){return autoreRepository.getAutoreInfo();}
 
 
 
