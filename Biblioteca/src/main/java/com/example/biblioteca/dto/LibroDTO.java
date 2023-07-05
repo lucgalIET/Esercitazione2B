@@ -13,8 +13,6 @@ import lombok.Setter;
 public class LibroDTO {
     private Long idLibro;
     private String titolo;
-
     private int pagine;
-
     private double prezzo;
 }

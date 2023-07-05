@@ -26,7 +26,7 @@ public class AutoreEntity {
     private String nomeAutore;
 
     @Column(name = "nazionalita")
-    private String nazionalita;
+    private String nazionalitaAutore;
 
     @ManyToMany( mappedBy = "autoreEntityList")
     @JsonBackReference

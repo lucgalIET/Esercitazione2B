@@ -11,7 +11,7 @@ public interface LibroMapper {
     @Mapping(source = "titolo",target="titolo")
     @Mapping(source = "prezzo",target="prezzo")
     @Mapping(source = "pagine",target="pagine")
-    LibroDTO entitytoDto(LibroEntity libroEntity);
+    LibroDTO entityToDto(LibroEntity libroEntity);
 
     @Mapping(source = "idLibro",target="idLibro")
     @Mapping(source = "titolo",target="titolo")
