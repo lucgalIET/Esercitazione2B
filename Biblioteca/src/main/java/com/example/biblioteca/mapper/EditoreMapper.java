@@ -17,7 +17,7 @@ public interface EditoreMapper {
 
     @Mapping(source = "idEditore", target = "idEditore")
     @Mapping(source = "nomeEditore", target = "nomeEditore")
-    @Mapping(source = "nazionalitaAutore", target = "nazionalitaAutore")
+    @Mapping(source = "contattoEditore", target = "contattoEditore")
     EditoreEntity dtoToEntity(EditoreDTO editoreDTO);
 
 
