@@ -1,5 +1,6 @@
 package com.example.biblioteca.service;
 
+import com.example.biblioteca.dto.LibroDTO;
 import com.example.biblioteca.entities.LibroEntity;
 import com.example.biblioteca.repository.LibroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,10 @@ public class LibroService {
     }
 
     public List<LibroEntity>libriConPiuDi400Pagine(){return libroRepository.libriConPiuDi400Pagine();}
+
+    public List<LibroDTO> getLibroInfo() {
+        return libroRepository.getLibroInfo();
+    }
 
 }
 

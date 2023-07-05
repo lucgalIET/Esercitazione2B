@@ -1,5 +1,6 @@
 package com.example.biblioteca.controller;
 
+import com.example.biblioteca.dto.LibroDTO;
 import com.example.biblioteca.entities.LibroEntity;
 import com.example.biblioteca.service.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,9 @@ public class LibroController {
     public List<LibroEntity> libriConPiuDi400Pagine(){return libroService.libriConPiuDi400Pagine();}
 
 
+
+    @GetMapping("/get-libro-info")
+    public List<LibroDTO> getLibroInfo(){return libroService.getLibroInfo();}
 
 }
 

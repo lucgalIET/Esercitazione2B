@@ -9,14 +9,14 @@ public interface LibroMapper {
     LibroMapper LIBRO_MAPPER = Mappers.getMapper(LibroMapper.class);
     @Mapping(source = "idLibro",target="idLibro")
     @Mapping(source = "titolo",target="titolo")
-    @Mapping(source = "prezzo",target="prezzo")
     @Mapping(source = "pagine",target="pagine")
-    LibroDTO entityToDto(LibroEntity libroEntity);
+    @Mapping(source = "prezzo",target="prezzo")
+    LibroDTO entityToDto (LibroEntity libroEntity);
 
     @Mapping(source = "idLibro",target="idLibro")
     @Mapping(source = "titolo",target="titolo")
-    @Mapping(source = "prezzo",target="prezzo")
     @Mapping(source = "pagine",target="pagine")
+    @Mapping(source = "prezzo",target="prezzo")
     LibroEntity dtoToEntity (LibroDTO libroDTO);
 
 
