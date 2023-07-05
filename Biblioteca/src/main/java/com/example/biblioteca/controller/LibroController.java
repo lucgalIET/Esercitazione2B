@@ -30,6 +30,10 @@ public class LibroController {
     @PostMapping("/edit/{id}")
     public LibroEntity updateLibro(@RequestBody LibroEntity libro) {return libroService.saveLibro(libro);}
 
+    @GetMapping("/libriConPiuDi400Pagine")
+    public List<LibroEntity> libriConPiuDi400Pagine(){return libroService.libriConPiuDi400Pagine();}
+
+
 }
 
 

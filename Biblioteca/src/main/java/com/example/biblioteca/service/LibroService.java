@@ -36,6 +36,8 @@ public class LibroService {
         return libroRepository.save(libro);
     }
 
+    public List<LibroEntity>libriConPiuDi400Pagine(){return libroRepository.libriConPiuDi400Pagine();}
+
 }
 
 
