@@ -3,10 +3,12 @@ package com.example.biblioteca.service;
 import com.example.biblioteca.dto.EditoreDTO;
 import com.example.biblioteca.entities.EditoreEntity;
 import com.example.biblioteca.entities.LibroEntity;
+import com.example.biblioteca.mapper.EditoreMapper;
 import com.example.biblioteca.repository.EditoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,13 +51,12 @@ public class EditoreService {
     }
 
     public List<EditoreDTO> getEditoreInfo() {
-
        List<EditoreEntity>editoreEntityList = editoreRepository.getEditoreInfo();
-       List<EditoreDTO> editoreDTOList;
+       List<EditoreDTO> editoreDTOList=new ArrayList<>();
        for(int i = 0; i<editoreEntityList.size();i++){
-           editoreDTOList.add(editoreMapper.EDITORE_
-           )
+           editoreDTOList.add(EditoreMapper.EDITORE_MAPPER.entityToDto(editoreEntityList.get(i)));
        }
+       return editoreDTOList;
 
     }
 
