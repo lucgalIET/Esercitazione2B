@@ -29,19 +29,25 @@ public class LibroService {
         libroRepository.deleteById(id);
     }
 
-    public LibroEntity updateLibro(LibroEntity libro) {
+    public LibroDTO updateLibro(LibroEntity libro) {
         Optional<LibroEntity> libroEntity = getLibroById(libro.getIdLibro());
         if (libroEntity.isEmpty()) throw new NullPointerException();
 
-        return libroRepository.save(libro);
+        return LibroMapper.LIBRO_MAPPER.entityToDto(libroRepository.save(libro));
     }
 
-    public LibroEntity saveLibro(LibroEntity libro) {
-        return libroRepository.save(libro);
+    public LibroDTO saveLibro(LibroEntity libro) {
+
+        return LibroMapper.LIBRO_MAPPER.entityToDto(libroRepository.save(libro));
     }
 
-    public List<LibroEntity> libriConPiuDi400Pagine() {
-        return libroRepository.libriConPiuDi400Pagine();
+    public List<LibroDTO> libriConPiuDi400Pagine() {
+        List<LibroEntity> libroEntityList = libroRepository.libriConPiuDi400Pagine();
+        List<LibroDTO> libroDTOList = new ArrayList<>();
+        for (int i = 0; i < libroEntityList.size(); i++) {
+            libroDTOList.add(LibroMapper.LIBRO_MAPPER.entityToDto(libroEntityList.get(i)));
+        }
+        return libroDTOList;
     }
 
     public List<LibroDTO> getLibroInfo() {
