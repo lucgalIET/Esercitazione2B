@@ -20,11 +20,16 @@ public class AutoreController {
         return autoreService.getAllAutore();
     }
 
+    @GetMapping("/get/DTO/all")
+    public List<AutoreDTO> getAllAutoreDTO(){return autoreService.getAllAutoreDTO();}
+
     @GetMapping("/get/{id}")
     public Optional<AutoreEntity> getAutoreById(@PathVariable Long id) {
         return autoreService.getAutoreById(id);
     }
 
+    @GetMapping("/get/DTO/{id}")
+    public Optional<AutoreDTO> getAutoreByIdDTO(@PathVariable Long id){return autoreService.getAutoreByIdDTO(id);}
     @PostMapping("/save")
     public AutoreEntity saveAutore(@RequestBody AutoreEntity autore) {
         return autoreService.saveAutore(autore);
@@ -36,10 +41,12 @@ public class AutoreController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteAutore(Long id) {
+    public void deleteAutore(@PathVariable Long id) {
         autoreService.deleteAutore(id);
     }
 
+    @DeleteMapping("/delete/DTO/{id}")
+    public void deleteAutoreDTO(@PathVariable Long id){autoreService.deleteAutoreDTO(id);}
     @GetMapping("/info")
     public List<AutoreDTO> getAutoreInfo() {
         return autoreService.getAutoreInfo();
