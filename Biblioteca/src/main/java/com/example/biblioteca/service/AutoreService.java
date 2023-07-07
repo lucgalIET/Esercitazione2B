@@ -15,7 +15,7 @@ public class AutoreService {
     @Autowired
     private AutoreRepository autoreRepository;
     @Autowired
-    AutoreRepositoryDTO autoreRepositoryDTO;
+    private AutoreRepositoryDTO autoreRepositoryDTO;
 
     public AutoreEntity saveAutore(AutoreEntity autore) {
         return autoreRepository.save(autore);
@@ -42,6 +42,13 @@ public class AutoreService {
 
         return autoreRepository.save(autore);
     }
+
+//    public AutoreDTO updateAutore(AutoreDTO autoreDTO){
+//        Optional<AutoreDTO> autoreDTO= getAutoreByIdDTO(autoreDTO.getIdAutore());
+//        if(autoreDTO.isEmpty())throw new NullPointerException();
+//
+//        return autoreRepositoryDTO.save(autoreDTO);
+//    }
 
     public void deleteAutore(Long id) {
         autoreRepository.deleteById(id);
