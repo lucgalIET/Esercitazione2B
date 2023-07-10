@@ -17,7 +17,7 @@ public class LibroController {
     private LibroService libroService;
 
     @GetMapping("/get/all")
-    public List<LibroEntity> getAllLibro() {
+    public List<LibroDTO> getAllLibro() {
         return libroService.getAllLibro();
     }
 
