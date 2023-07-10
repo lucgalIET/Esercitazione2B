@@ -29,7 +29,7 @@ public class AutoreController {
 
 
     @PostMapping("/save")
-    public AutoreEntity saveAutore(@RequestBody AutoreEntity autore) {
+    public AutoreEntity saveAutore1(@RequestBody AutoreEntity autore) {
         return autoreService.saveAutore(autore);
     }
 
@@ -54,7 +54,7 @@ public class AutoreController {
     }
     @PostMapping("/save-DTO")
     public AutoreDTO saveAutore(@RequestBody AutoreEntity autore) {
-        return autoreService.saveAutore(autore);
+        return autoreService.saveAutoreDTO(autore);
     }
 
 
