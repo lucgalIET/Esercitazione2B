@@ -23,7 +23,7 @@ public class EditoreService {
     }
 
     public List<EditoreDTO> getAllEditore() {
-        List<EditoreDTO>editoreEntityList = editoreRepository.findAll();
+        List<EditoreEntity>editoreEntityList = editoreRepository.findAll();
         List<EditoreDTO> editoreDTOList=new ArrayList<>();
         for(int i = 0; i<editoreEntityList.size();i++){
             editoreDTOList.add(EditoreMapper.EDITORE_MAPPER.entityToDto(editoreEntityList.get(i)));

@@ -23,8 +23,9 @@ public class EditoreController {
     }
 
     @GetMapping("/get/{id}")
-    public EditoreDTO getEditoreById(@PathVariable Long id) {
-        return EditoreMapper.EDITORE_MAPPER.entityToDto(editoreService.getEditoreById(id).get());
+    public Optional<EditoreDTO> getEditoreById(@PathVariable Long id) {
+        return editoreService.getEditoreById(id);
+
     }
 
     @PostMapping("/save")

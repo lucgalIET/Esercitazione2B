@@ -1,7 +1,6 @@
 package com.example.biblioteca.service;
 
 import com.example.biblioteca.dto.LibroDTO;
-import com.example.biblioteca.entities.EditoreEntity;
 import com.example.biblioteca.entities.LibroEntity;
 import com.example.biblioteca.mapper.LibroMapper;
 import com.example.biblioteca.repository.LibroRepository;
