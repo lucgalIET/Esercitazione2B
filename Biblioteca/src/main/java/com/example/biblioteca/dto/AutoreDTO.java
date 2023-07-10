@@ -7,7 +7,6 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-
 public class AutoreDTO {
     private Long idAutore;
     private String nomeAutore;

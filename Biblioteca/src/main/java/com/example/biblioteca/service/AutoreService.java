@@ -1,11 +1,15 @@
 package com.example.biblioteca.service;
+
 import com.example.biblioteca.dto.AutoreDTO;
+import com.example.biblioteca.dto.LibroDTO;
 import com.example.biblioteca.entities.AutoreEntity;
+import com.example.biblioteca.entities.LibroEntity;
 import com.example.biblioteca.mapper.AutoreMapper;
+import com.example.biblioteca.mapper.LibroMapper;
 import com.example.biblioteca.repository.AutoreRepository;
-import com.example.biblioteca.repository.AutoreRepositoryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -14,26 +18,22 @@ import java.util.Optional;
 public class AutoreService {
     @Autowired
     private AutoreRepository autoreRepository;
-    @Autowired
-    private AutoreRepositoryDTO autoreRepositoryDTO;
+
 
     public AutoreEntity saveAutore(AutoreEntity autore) {
         return autoreRepository.save(autore);
     }
-    public AutoreDTO saveAutoreDTO(AutoreDTO autoreDTO){
-        return autoreRepositoryDTO.save(autoreDTO);
-}
+
 
     public List<AutoreEntity> getAllAutore() {
         return autoreRepository.findAll();
     }
 
-    public List<AutoreDTO> getAllAutoreDTO(){return autoreRepositoryDTO.findAll();}
 
     public Optional<AutoreEntity> getAutoreById(Long id) {
         return autoreRepository.findById(id);
     }
-    public Optional<AutoreDTO> getAutoreByIdDTO(Long id){return autoreRepositoryDTO.findById(id);}
+
 
     public AutoreEntity updateEditore(AutoreEntity autore) {
 
@@ -43,19 +43,8 @@ public class AutoreService {
         return autoreRepository.save(autore);
     }
 
-//    public AutoreDTO updateAutore(AutoreDTO autoreDTO){
-//        Optional<AutoreDTO> autoreDTO= getAutoreByIdDTO(autoreDTO.getIdAutore());
-//        if(autoreDTO.isEmpty())throw new NullPointerException();
-//
-//        return autoreRepositoryDTO.save(autoreDTO);
-//    }
-
     public void deleteAutore(Long id) {
         autoreRepository.deleteById(id);
-    }
-
-    public void deleteAutoreDTO(Long id){
-        autoreRepositoryDTO.deleteById(id);
     }
 
 
@@ -68,12 +57,18 @@ public class AutoreService {
         return autoreDTOList;
     }
 
+    public AutoreDTO updateAutore(AutoreDTO autore) {
+        Optional<AutoreEntity> autoreEntity = getAutoreById(autore.getIdAutore());
+        if (autoreEntity.isEmpty()) throw new NullPointerException();
+        AutoreEntity autoreEntity1 = AutoreMapper.AUTORE_MAPPER.dtoToEntity(autore);
+        return AutoreMapper.AUTORE_MAPPER.entityToDto(autoreRepository.save(autoreEntity1));
 
+    }
 
+    public AutoreDTO saveAutoreDTO(AutoreEntity autore) {
 
-
-
-
+        return AutoreMapper.AUTORE_MAPPER.entityToDto(autoreRepository.save(autore));
+    }
 
 
 
