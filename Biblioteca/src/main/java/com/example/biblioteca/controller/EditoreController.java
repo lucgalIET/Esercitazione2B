@@ -3,6 +3,7 @@ package com.example.biblioteca.controller;
 
 import com.example.biblioteca.dto.EditoreDTO;
 import com.example.biblioteca.entities.EditoreEntity;
+import com.example.biblioteca.mapper.EditoreMapper;
 import com.example.biblioteca.service.EditoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,18 +18,18 @@ public class EditoreController {
     private EditoreService editoreService;
 
     @GetMapping("/get/all")
-    public List<EditoreEntity> getAllEditore() {
+    public List<EditoreDTO> getAllEditore() {
         return editoreService.getAllEditore();
     }
 
     @GetMapping("/get/{id}")
-    public Optional<EditoreEntity> getEditoreById(@PathVariable Long id) {
-        return editoreService.getEditoreById(id);
+    public EditoreDTO getEditoreById(@PathVariable Long id) {
+        return EditoreMapper.EDITORE_MAPPER.entityToDto(editoreService.getEditoreById(id).get());
     }
 
     @PostMapping("/save")
-    public EditoreEntity saveEditore(@RequestBody EditoreEntity editore) {
-        return editoreService.saveEditore(editore);
+    public EditoreDTO saveEditore(@RequestBody EditoreEntity editore) {
+        return EditoreMapper.EDITORE_MAPPER.entityToDto(editoreService.saveEditore(editore));
     }
 
     @PostMapping("/update/{id}")

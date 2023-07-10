@@ -17,8 +17,15 @@ public class LibroService {
     @Autowired
     private LibroRepository libroRepository;
 
-    public List<LibroEntity> getAllLibro() {
-        return libroRepository.findAll();
+    public List<LibroDTO> getAllLibro() {
+        List<LibroEntity> libroEntityList = libroRepository.findAll();
+        List<LibroDTO> libroDTOList = new ArrayList<>();
+        for (int i = 0; i < libroEntityList.size(); i++) {
+            libroDTOList.add(LibroMapper.LIBRO_MAPPER.entityToDto(libroEntityList.get(i)));
+        }
+        return libroDTOList;
+
+
     }
 
     public Optional<LibroEntity> getLibroById(@PathVariable Long id) {

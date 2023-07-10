@@ -22,8 +22,15 @@ public class EditoreService {
         return editoreRepository.save(editore);
     }
 
-    public List<EditoreEntity> getAllEditore() {
-        return editoreRepository.findAll();
+    public List<EditoreDTO> getAllEditore() {
+        List<EditoreEntity>editoreEntityList = editoreRepository.findAll();
+        List<EditoreDTO> editoreDTOList=new ArrayList<>();
+        for(int i = 0; i<editoreEntityList.size();i++){
+            editoreDTOList.add(EditoreMapper.EDITORE_MAPPER.entityToDto(editoreEntityList.get(i)));
+        }
+        return editoreDTOList;
+
+
     }
 
     public Optional<EditoreEntity> getEditoreById(Long id) {
