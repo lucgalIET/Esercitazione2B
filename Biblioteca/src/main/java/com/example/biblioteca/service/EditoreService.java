@@ -18,8 +18,8 @@ public class EditoreService {
     private EditoreRepository editoreRepository;
 
 
-    public EditoreEntity saveEditore(EditoreEntity editore) {
-        return editoreRepository.save(editore);
+    public EditoreDTO saveEditore(EditoreEntity editore) {
+        return EditoreMapper.EDITORE_MAPPER.entityToDto(editoreRepository.save(editore));
     }
 
     public List<EditoreDTO> getAllEditore() {
