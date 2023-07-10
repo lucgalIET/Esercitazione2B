@@ -31,7 +31,7 @@ public class EditoreController {
         return editoreService.saveEditore(editore);
     }
 
-    @PostMapping("/edit/{id}")
+    @PostMapping("/update/{id}")
     public EditoreEntity updateEditore(@RequestBody EditoreEntity editore) {
         return editoreService.saveEditore(editore);
     }

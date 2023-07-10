@@ -37,7 +37,7 @@ public class LibroController {
         return libroService.saveLibro(libro);
     }
 
-    @PutMapping("/edit/{id}")
+    @PutMapping("/update/{id}")
     public LibroDTO updateLibro(@RequestBody LibroDTO libro) {
         return libroService.updateLibro(libro);
     }
