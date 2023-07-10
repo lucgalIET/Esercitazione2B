@@ -33,8 +33,8 @@ public class EditoreController {
     }
 
     @PostMapping("/update/{id}")
-    public EditoreEntity updateEditore(@RequestBody EditoreEntity editore) {
-        return editoreService.saveEditore(editore);
+    public EditoreDTO updateEditore(@RequestBody EditoreEntity editore) {
+        return EditoreMapper.EDITORE_MAPPER.entityToDto(editoreService.saveEditore(editore));
     }
 
     @DeleteMapping("/delete/{id}")

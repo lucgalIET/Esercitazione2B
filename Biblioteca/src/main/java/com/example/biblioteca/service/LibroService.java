@@ -1,6 +1,7 @@
 package com.example.biblioteca.service;
 
 import com.example.biblioteca.dto.LibroDTO;
+import com.example.biblioteca.entities.EditoreEntity;
 import com.example.biblioteca.entities.LibroEntity;
 import com.example.biblioteca.mapper.LibroMapper;
 import com.example.biblioteca.repository.LibroRepository;
@@ -28,20 +29,22 @@ public class LibroService {
 
     }
 
-    public LibroDTO getLibroById(@PathVariable Long id) {
-
-        return LibroMapper.LIBRO_MAPPER.entityToDto(libroRepository.findById(id).get());
+    public Optional<LibroDTO> getLibroById(@PathVariable Long id) {
+        Optional<LibroEntity> libroEntity = libroRepository.findById(id);;
+        if (libroEntity.isEmpty()) throw new NullPointerException();
+        return Optional.ofNullable(LibroMapper.LIBRO_MAPPER.entityToDto(libroRepository.findById(id).get()));
     }
 
     public void deleteLibroById(@PathVariable Long id) {
         libroRepository.deleteById(id);
     }
 
-    public LibroDTO updateLibro(LibroDTO libro) {
-        Optional<LibroEntity> libroEntity = getLibroById(libro.getIdLibro());
-        if (libroEntity.isEmpty()) throw new NullPointerException();
-        LibroEntity libroEntity1 = LibroMapper.LIBRO_MAPPER.dtoToEntity(libro);
-        return LibroMapper.LIBRO_MAPPER.entityToDto(libroRepository.save(libroEntity1));
+    public LibroDTO updateLibro(LibroEntity libroNew) {
+        Optional<LibroDTO> LibroDTO = getLibroById(libroNew.getIdLibro());
+        if (LibroDTO.isEmpty()) throw new NullPointerException();
+        return  LibroMapper.LIBRO_MAPPER.entityToDto(libroRepository.save(libroNew));
+
+
 
     }
 

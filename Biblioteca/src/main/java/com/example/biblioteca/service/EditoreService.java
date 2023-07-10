@@ -23,7 +23,7 @@ public class EditoreService {
     }
 
     public List<EditoreDTO> getAllEditore() {
-        List<EditoreEntity>editoreEntityList = editoreRepository.findAll();
+        List<EditoreDTO>editoreEntityList = editoreRepository.findAll();
         List<EditoreDTO> editoreDTOList=new ArrayList<>();
         for(int i = 0; i<editoreEntityList.size();i++){
             editoreDTOList.add(EditoreMapper.EDITORE_MAPPER.entityToDto(editoreEntityList.get(i)));
@@ -33,14 +33,16 @@ public class EditoreService {
 
     }
 
-    public Optional<EditoreEntity> getEditoreById(Long id) {
-        return editoreRepository.findById(id);
+    public Optional<EditoreDTO> getEditoreById(Long id) {
+        Optional<EditoreEntity> editoreEntity = editoreRepository.findById(id);;
+        if (editoreEntity.isEmpty()) throw new NullPointerException();
+        return Optional.ofNullable(EditoreMapper.EDITORE_MAPPER.entityToDto(editoreEntity.get()));
     }
 
     public EditoreEntity updateEditore(EditoreEntity editore) {
 
-        Optional<EditoreEntity> editoreEntity = getEditoreById(editore.getIdEditore());
-        if (editoreEntity.isEmpty()) throw new NullPointerException();
+        Optional<EditoreDTO> editoreDTO = getEditoreById(editore.getIdEditore());
+        if (editoreDTO.isEmpty()) throw new NullPointerException();
 
         return editoreRepository.save(editore);
     }
