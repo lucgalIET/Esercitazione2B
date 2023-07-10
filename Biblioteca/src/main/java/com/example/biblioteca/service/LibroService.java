@@ -29,11 +29,12 @@ public class LibroService {
         libroRepository.deleteById(id);
     }
 
-    public LibroDTO updateLibro(LibroEntity libro) {
+    public LibroDTO updateLibro(LibroDTO libro) {
         Optional<LibroEntity> libroEntity = getLibroById(libro.getIdLibro());
         if (libroEntity.isEmpty()) throw new NullPointerException();
+        LibroEntity libroEntity1 = LibroMapper.LIBRO_MAPPER.dtoToEntity(libro);
+        return LibroMapper.LIBRO_MAPPER.entityToDto(libroRepository.save(libroEntity1));
 
-        return LibroMapper.LIBRO_MAPPER.entityToDto(libroRepository.save(libro));
     }
 
     public LibroDTO saveLibro(LibroEntity libro) {

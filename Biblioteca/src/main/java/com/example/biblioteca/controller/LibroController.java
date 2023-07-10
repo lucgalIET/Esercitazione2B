@@ -37,9 +37,9 @@ public class LibroController {
         return libroService.saveLibro(libro);
     }
 
-    @PostMapping("/edit/{id}")
-    public LibroDTO updateLibro(@RequestBody LibroEntity libro) {
-        return libroService.saveLibro(libro);
+    @PutMapping("/edit/{id}")
+    public LibroDTO updateLibro(@RequestBody LibroDTO libro) {
+        return libroService.updateLibro(libro);
     }
 
     @GetMapping("/libriConPiuDi400Pagine")

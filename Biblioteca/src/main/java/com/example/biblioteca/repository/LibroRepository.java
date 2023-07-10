@@ -11,9 +11,7 @@ import java.util.List;
 @Repository
 public interface LibroRepository extends JpaRepository<LibroEntity,Long> {
 
-    @Query(value = "SELECT l.titolo,l.pagine,l.prezzo" +
-            "FROM libro l" +
-            "WHERE pagine>400", nativeQuery = true)
+    @Query(value = "SELECT * FROM libro WHERE pagine>400", nativeQuery = true)
     List<LibroEntity> libriConPiuDi400Pagine();
 
     @Query(value = "SELECT * FROM libro", nativeQuery = true )

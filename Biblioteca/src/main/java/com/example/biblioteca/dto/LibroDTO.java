@@ -23,5 +23,6 @@ public class LibroDTO {
     private String titolo;
     private int pagine;
     private double prezzo;
+    private EditoreDTO editoreDTO;
     private List<AutoreDTO> autoreDTOList = new ArrayList<>();
 }
