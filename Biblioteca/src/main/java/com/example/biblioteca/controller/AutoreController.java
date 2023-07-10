@@ -23,18 +23,18 @@ public class AutoreController {
     }
 
     @GetMapping("/get/{id}")
-    public Optional<AutoreEntity> getAutoreById(@PathVariable Long id) {
+    public Optional<AutoreDTO> getAutoreById(@PathVariable Long id) {
         return autoreService.getAutoreById(id);
     }
 
 
     @PostMapping("/save")
-    public AutoreEntity saveAutore1(@RequestBody AutoreEntity autore) {
+    public AutoreDTO saveAutore1(@RequestBody AutoreEntity autore) {
         return autoreService.saveAutore(autore);
     }
 
     @PostMapping("/modifica/{id}")
-    public AutoreEntity updateAutore(@RequestBody AutoreEntity autore) {
+    public AutoreDTO updateAutore(@RequestBody AutoreEntity autore) {
         return autoreService.saveAutore(autore);
     }
 

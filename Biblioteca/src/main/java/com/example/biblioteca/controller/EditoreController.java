@@ -3,7 +3,6 @@ package com.example.biblioteca.controller;
 
 import com.example.biblioteca.dto.EditoreDTO;
 import com.example.biblioteca.entities.EditoreEntity;
-import com.example.biblioteca.mapper.EditoreMapper;
 import com.example.biblioteca.service.EditoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

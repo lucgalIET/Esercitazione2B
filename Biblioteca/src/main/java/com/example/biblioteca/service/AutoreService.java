@@ -20,8 +20,8 @@ public class AutoreService {
     private AutoreRepository autoreRepository;
 
 
-    public AutoreEntity saveAutore(AutoreEntity autore) {
-        return autoreRepository.save(autore);
+    public AutoreDTO saveAutore(AutoreEntity autore) {
+        return AutoreMapper.AUTORE_MAPPER.entityToDto(autoreRepository.save(autore));
     }
 
 
@@ -30,17 +30,19 @@ public class AutoreService {
     }
 
 
-    public Optional<AutoreEntity> getAutoreById(Long id) {
-        return autoreRepository.findById(id);
+    public Optional<AutoreDTO> getAutoreById(Long id) {
+        Optional<AutoreEntity> autoreEntity = autoreRepository.findById(id);
+        if (autoreEntity.isEmpty()) throw new NullPointerException();
+        return Optional.ofNullable(AutoreMapper.AUTORE_MAPPER.entityToDto(autoreEntity.get()));
     }
 
 
-    public AutoreEntity updateEditore(AutoreEntity autore) {
+    public AutoreDTO updateEditore(AutoreEntity autore) {
 
-        Optional<AutoreEntity> autoreEntity = getAutoreById(autore.getIdAutore());
+        Optional<AutoreDTO> autoreEntity = getAutoreById(autore.getIdAutore());
         if (autoreEntity.isEmpty()) throw new NullPointerException();
 
-        return autoreRepository.save(autore);
+        return AutoreMapper.AUTORE_MAPPER.entityToDto(autoreRepository.save(autore));
     }
 
     public void deleteAutore(Long id) {
@@ -58,8 +60,8 @@ public class AutoreService {
     }
 
     public AutoreDTO updateAutore(AutoreDTO autore) {
-        Optional<AutoreEntity> autoreEntity = getAutoreById(autore.getIdAutore());
-        if (autoreEntity.isEmpty()) throw new NullPointerException();
+        Optional<AutoreDTO> autoreDTO = getAutoreById(autore.getIdAutore());
+        if (autoreDTO.isEmpty()) throw new NullPointerException();
         AutoreEntity autoreEntity1 = AutoreMapper.AUTORE_MAPPER.dtoToEntity(autore);
         return AutoreMapper.AUTORE_MAPPER.entityToDto(autoreRepository.save(autoreEntity1));
 
