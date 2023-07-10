@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/libro")
@@ -22,7 +22,7 @@ public class LibroController {
     }
 
     @GetMapping("/get/{id}")
-    public Optional<LibroEntity> getlibroById(@PathVariable Long id) {
+    public LibroDTO getlibroById(@PathVariable Long id) {
         return libroService.getLibroById(id);
     }
 

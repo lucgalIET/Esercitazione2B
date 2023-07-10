@@ -28,8 +28,9 @@ public class LibroService {
 
     }
 
-    public Optional<LibroEntity> getLibroById(@PathVariable Long id) {
-        return libroRepository.findById(id);
+    public LibroDTO getLibroById(@PathVariable Long id) {
+
+        return LibroMapper.LIBRO_MAPPER.entityToDto(libroRepository.findById(id).get());
     }
 
     public void deleteLibroById(@PathVariable Long id) {
